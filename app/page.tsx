@@ -6,16 +6,16 @@ import { FaArrowRight, FaGithub, FaLinkedin, FaRocket, FaSmileBeam } from "react
 import { PortfolioShell, GlassCard, PagePill, StatCard } from "./components/portfolio-shell";
 
 const stats = [
-  { value: "Django", label: "Backend strength" },
-  { value: "Next.js", label: "Frontend delivery" },
-  { value: "React", label: "Interactive UI" },
+  { value: "Django", label: "Backend Framework" },
+  { value: "Next.js", label: "Frontend Framework" },
+  { value: "React", label: "Frontend Library" },
 ];
 
 const skillsPreview = ["Python", "JavaScript", "React.js", "Next.js", "Django", "DRF", "Tailwind CSS", "SQL", "Git & GitHub"];
 
 export default function Home() {
   return (
-    <PortfolioShell title="Home" eyebrow="Full Stack Developer">
+    <PortfolioShell title="" eyebrow="Full Stack Developer">
       <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className="space-y-8">
           <div className="space-y-5">
@@ -43,7 +43,7 @@ export default function Home() {
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#D8B36A]">Core skill set</p>
-                <p className="mt-2 text-sm text-white/70">Recruiter-friendly technologies and professional strengths</p>
+                <p className="mt-2 text-sm text-white/70">Modern-friendly technologies and professional strengths</p>
               </div>
               <Link href="/skills" className="text-sm font-semibold text-[#F2D28A] transition hover:text-white">
                 View full skills
@@ -77,10 +77,12 @@ export default function Home() {
                 <div className="absolute left-6 top-6 h-24 w-24 rounded-full border border-[#C9A25A]/30" />
                 <div className="absolute bottom-8 right-8 h-36 w-36 rounded-full bg-[#F2D28A]/10 blur-2xl" />
                 <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 to-transparent" />
-                <div className="absolute inset-6 rounded-[24px] border border-[#C9A25A]/20 bg-black/30" />
-                <div className="absolute inset-x-8 bottom-10 flex h-[280px] items-end justify-center rounded-[30px] border border-[#C9A25A]/20 bg-[linear-gradient(135deg,rgba(201,162,90,0.2),rgba(255,255,255,0.06))] p-4 text-center text-sm font-medium text-[#F2D28A] shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
-                  Your photo will appear here
-                </div>
+                <div className="absolute inset-6 overflow-hidden rounded-[24px] border border-[#C9A25A]/20 bg-black/30" />
+                <img
+                  src="https://sullimeer.pythonanywhere.com/static/img/SM%20big.png"
+                  alt="Suliman Meer"
+                  className="absolute inset-6 h-[calc(100%-3rem)] w-[calc(100%-3rem)] rounded-[24px] object-contain object-center shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+                />
               </div>
               <div className="flex items-center gap-3">
                 <a href="https://github.com/sulimanmeersadpara" target="_blank" rel="noreferrer" className="rounded-full border border-[#C9A25A]/30 p-3 text-[#D8B36A] transition hover:border-[#F2D28A] hover:text-[#F2D28A]">

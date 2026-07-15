@@ -139,10 +139,12 @@ export function PortfolioShell({
           </div>
 
           <div className="rounded-[32px] border border-[#C9A25A]/20 bg-[#0B0B0B]/90 p-6 shadow-[0_30px_120px_rgba(201,162,90,0.14)] backdrop-blur-xl sm:p-8 lg:p-12">
+            {title ? (
             <div className="mb-6 flex flex-col gap-2 border-b border-[#C9A25A]/20 pb-6">
               <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#D8B36A]">{title}</p>
               <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">Built with precision, delivered with purpose.</h1>
             </div>
+          ) : null}
             {children}
           </div>
         </motion.div>

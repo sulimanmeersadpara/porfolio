@@ -36,11 +36,7 @@ export default function SkillsPage() {
   return (
     <PortfolioShell title="Skills" eyebrow="Technical strengths">
       <div className="space-y-8">
-        <SectionTitle
-          eyebrow="Recruiter-friendly overview"
-          title="A clear, structured view of my technical and professional capabilities."
-          description="These are the core skills I use to build modern, scalable, and production-ready web applications."
-        />
+        <SectionTitle eyebrow="Technical overview" title="Core skills and strengths" description="A concise view of my development capabilities." />
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {skillGroups.map((group, index) => {
