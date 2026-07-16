@@ -11,27 +11,15 @@ const highlights = [
   { value: "Lahore", label: "Currently living in" },
 ];
 
+const favoriteGames = ["Football", "Volleyball", "Basketball"];
+const favoriteFoods = ["Pizza", "Zinger Burger", "Chicken Karahi"];
+const favoritePlaces = ["Hunza", "Naran Kaghan", "Fairy Meadows"];
+
 const personalities = [
-  {
-    name: "Cristiano Ronaldo",
-    role: "Footballer",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_%28cropped%29.jpg/500px-Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_%28cropped%29.jpg",
-  },
-  {
-    name: "Ousmane Dembélé",
-    role: "Footballer",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Ousmane_Dembele_France_v_Senegal_16_June_2026-341_%28cropped%29_2.jpg/500px-Ousmane_Dembele_France_v_Senegal_16_June_2026-341_%28cropped%29_2.jpg",
-  },
-  {
-    name: "Goldberg",
-    role: "WWE Fighter",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Bill_Goldberg_Boerne_01_%28cropped%29.jpg/500px-Bill_Goldberg_Boerne_01_%28cropped%29.jpg",
-  },
-  {
-    name: "Khabib Nurmagomedov",
-    role: "UFC Fighter",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Khabib_nurmagomedov.jpg/500px-Khabib_nurmagomedov.jpg",
-  },
+  { name: "Cristiano Ronaldo", role: "Footballer" },
+  { name: "Ousmane Dembélé", role: "Footballer" },
+  { name: "Goldberg", role: "WWE Fighter" },
+  { name: "Khabib Nurmagomedov", role: "UFC Fighter" },
 ];
 
 const journey = [
@@ -45,7 +33,7 @@ export default function AboutPage() {
     <PortfolioShell title="" eyebrow="Full Stack Developer">
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-8">
-          <SectionTitle eyebrow="About Me" title="Building polished digital products with strong engineering discipline." description="I’m Suliman Meer, a passionate Full Stack Developer from Skardu, now based in Lahore. I completed my BS in Computer Science from the University of Baltistan and have been learning and practicing programming for over 7 years." />
+          <SectionTitle eyebrow="About Me" title="Building practical web solutions with simple, clear thinking." description="I’m Suliman Meer, a passionate Full Stack Developer from Skardu, now based in Lahore. I completed my BS in Computer Science from the University of Baltistan and have been learning and practicing programming for over 7 years." />
           <GlassCard className="space-y-6">
             <div className="flex items-center gap-3 text-[#D8B36A]">
               <FaUser size={20} />
@@ -99,7 +87,7 @@ export default function AboutPage() {
             <FaRocket size={18} />
             <p className="text-sm font-semibold uppercase tracking-[0.28em]">Career objective</p>
           </div>
-          <p className="text-lg leading-8 text-white/75">I’m focused on building reliable digital products for companies that value modern engineering, thoughtful UX, and dependable delivery. In my final year project, I built a full ecommerce website in Django, which strengthened my backend development experience and helped me connect theory with real implementation.</p>
+          <p className="text-lg leading-8 text-white/75">I enjoy building practical web applications that are useful, clean, and easy to use. My interests are in full stack development, backend systems, problem solving, and creating solutions that actually help people. I like working with modern tools, improving my logic and coding skills, and turning ideas into working products with strong structure and real value.</p>
         </GlassCard>
 
         <GlassCard className="space-y-5">
@@ -116,20 +104,36 @@ export default function AboutPage() {
             ))}
           </div>
           <div className="rounded-2xl border border-[#C9A25A]/20 bg-[#050505] p-4">
-            <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Personal interests</p>
-            <p className="mt-3 text-sm leading-7 text-white/70">I love football, exploring new places, making new friends, and staying curious about life beyond work. I’m also deeply connected to my roots in Skardu and currently living in Johar Town, Lahore.</p>
+            <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Favorite games</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {favoriteGames.map((item) => (
+                <span key={item} className="rounded-full border border-[#C9A25A]/20 px-3 py-1 text-sm text-[#F2D28A]">{item}</span>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[#C9A25A]/20 bg-[#050505] p-4">
+            <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Favorite food</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {favoriteFoods.map((item) => (
+                <span key={item} className="rounded-full border border-[#C9A25A]/20 px-3 py-1 text-sm text-[#F2D28A]">{item}</span>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[#C9A25A]/20 bg-[#050505] p-4">
+            <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Favorite places</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {favoritePlaces.map((item) => (
+                <span key={item} className="rounded-full border border-[#C9A25A]/20 px-3 py-1 text-sm text-[#F2D28A]">{item}</span>
+              ))}
+            </div>
           </div>
           <div className="rounded-2xl border border-[#C9A25A]/20 bg-[#050505] p-4">
             <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Favorite personalities</p>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               {personalities.map((person) => (
-                <div key={person.name} className="overflow-hidden rounded-2xl border border-[#C9A25A]/20 bg-[#111111]">
-                  <img src={person.image} alt={person.name} className="h-56 w-full object-cover object-center" />
-                  <div className="p-4">
-                    <p className="font-semibold text-white">{person.name}</p>
-                    <p className="mt-1 text-sm text-[#D8B36A]">{person.role}</p>
-                  </div>
-                </div>
+                <span key={person.name} className="rounded-full border border-[#C9A25A]/20 px-3 py-2 text-sm text-white/80">
+                  {person.name} · {person.role}
+                </span>
               ))}
             </div>
           </div>
