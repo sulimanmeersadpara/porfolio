@@ -16,21 +16,23 @@ const skillsPreview = ["Python", "JavaScript", "React.js", "Next.js", "Django", 
 export default function Home() {
   return (
     <PortfolioShell title="" eyebrow="Full Stack Developer">
-      <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-        <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className="space-y-8">
+      <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center w-full">
+        <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className="space-y-8 min-w-0">
           <div className="space-y-5">
             <PagePill>Python Django | Next.js | React.js</PagePill>
             <h2 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">SULIMAN MEER</h2>
             <p className="max-w-xl text-lg leading-8 text-white/75">Full Stack Developer with hands-on experience building production-ready web applications using Python Django, React.js, and Next.js.</p>
           </div>
 
-          <div className="flex flex-wrap gap-4">
-            <Link href="/projects" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-5 py-3 font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(201,162,90,0.25)]">
-              Explore projects <FaArrowRight />
-            </Link>
-            <Link href="/about" className="inline-flex items-center gap-2 rounded-full border border-[#C9A25A]/30 bg-[#111111] px-5 py-3 font-semibold text-[#F2D28A] transition duration-300 hover:-translate-y-0.5 hover:border-[#F2D28A]">
-              <FaSmileBeam /> Learn more
-            </Link>
+          <div className="w-full max-w-full overflow-hidden min-w-0 sm:max-w-none">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap min-w-0">
+              <Link href="/projects" className="inline-flex min-w-0 w-full max-w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-5 py-3 font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(201,162,90,0.25)] sm:w-auto">
+                Explore projects <FaArrowRight />
+              </Link>
+              <Link href="/about" className="inline-flex min-w-0 w-full max-w-full items-center justify-center gap-2 rounded-full border border-[#C9A25A]/30 bg-[#111111] px-5 py-3 font-semibold text-[#F2D28A] transition duration-300 hover:-translate-y-0.5 hover:border-[#F2D28A] sm:w-auto">
+                <FaSmileBeam /> Learn more
+              </Link>
+            </div>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3">
@@ -59,7 +61,7 @@ export default function Home() {
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className="relative">
+        <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className="relative min-w-0">
           <GlassCard className="relative overflow-hidden p-0">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(201,162,90,0.16),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(242,210,138,0.2),_transparent_35%)]" />
             <div className="relative grid gap-6 p-6 sm:p-8">
