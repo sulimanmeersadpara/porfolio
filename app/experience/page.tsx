@@ -8,7 +8,7 @@ export default function ExperiencePage() {
   return (
     <PortfolioShell title="" eyebrow="Professional growth">
       <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <SectionTitle eyebrow="Experience" title="Building practical web solutions with strong engineering discipline." description="My journey has been shaped by hands-on learning, real project work, and steady growth in full stack development." />
+        <SectionTitle eyebrow="Experience" title="Building Production-Ready Applications using Python Django, React.js and Next.js" description="My journey has been shaped by hands-on learning, real project work, and steady growth in full stack development." />
 
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-[28px] border border-[#C9A25A]/20 bg-[#111111]/90 p-6 shadow-[0_18px_70px_rgba(0,0,0,0.25)] backdrop-blur-xl">
           <div className="flex items-center gap-2 text-[#D8B36A]">

@@ -32,7 +32,7 @@ export function PortfolioShell({
             {title ? (
             <div className="mb-6 flex flex-col gap-2 border-b border-[#C9A25A]/20 pb-6">
               <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#D8B36A]">{title}</p>
-              <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">Built with precision, delivered with purpose.</h1>
+              <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">Designed, Developed, and Delivered.</h1>
             </div>
           ) : null}
             {children}

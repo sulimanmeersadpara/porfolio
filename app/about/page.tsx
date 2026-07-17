@@ -33,7 +33,7 @@ export default function AboutPage() {
     <PortfolioShell title="" eyebrow="Full Stack Developer">
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-8">
-          <SectionTitle eyebrow="About Me" title="Building practical web solutions with simple, clear thinking." description="I’m Suliman Meer, a passionate Full Stack Developer from Skardu, now based in Lahore. I completed my BS in Computer Science from the University of Baltistan and have been learning and practicing programming for over 7 years." />
+          <SectionTitle eyebrow="About Me" title="Creating Modern Web Applications with Python, Django & Next.js." description="I’m Suliman Meer, a passionate Full Stack Developer from Skardu, now based in Lahore. I completed my BS in Computer Science from the University of Baltistan and have been learning and practicing programming for over 7 years." />
           <GlassCard className="space-y-6">
             <div className="flex items-center gap-3 text-[#D8B36A]">
               <FaUser size={20} />
