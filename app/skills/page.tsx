@@ -34,7 +34,7 @@ const skillGroups = [
 
 export default function SkillsPage() {
   return (
-    <PortfolioShell title="Skills" eyebrow="Technical strengths">
+    <PortfolioShell title="Skills"  heading="Core Skills and Technologies"  eyebrow="Technical strengths">
       <div className="space-y-8">
         <SectionTitle eyebrow="Technical overview" title="Core skills and strengths" description="A concise view of my development capabilities." />
 

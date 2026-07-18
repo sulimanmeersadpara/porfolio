@@ -60,7 +60,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <PortfolioShell title="Projects" eyebrow="Selected work">
+    <PortfolioShell title="Projects" heading="Designed, Developed, and Delivered." eyebrow="Selected work">
       <div className="space-y-8">
         <SectionTitle eyebrow="Featured work" title="Selected projects" description="A few of my recent web products and implementations." />
         <div className="grid gap-6 xl:grid-cols-4 lg:grid-cols-2">

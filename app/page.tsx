@@ -67,8 +67,9 @@ export default function Home() {
             <div className="relative grid gap-6 p-6 sm:p-8">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#D8B36A]">Available for selected collaborations</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#D8B36A]">Open to Opportunities</p>
                   <p className="mt-2 text-2xl font-semibold text-white">Full Stack Developer</p>
+                  <p className="mt-1 text-sm text-white/70">Python · Django · Next.js</p>
                 </div>
                 <div className="rounded-2xl border border-[#C9A25A]/30 bg-[#111111] p-3 text-[#F2D28A]">
                   <FaRocket size={18} />
