@@ -82,7 +82,7 @@ export default function Home() {
                 <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 to-transparent" />
                 <div className="absolute inset-6 overflow-hidden rounded-[24px] border border-[#C9A25A]/20 bg-black/30" />
                 <img
-                  src="https://sullimeer.pythonanywhere.com/static/img/SM%20big.png"
+                  src="/SM big.png"
                   alt="Suliman Meer"
                   className="absolute inset-6 h-[calc(100%-3rem)] w-[calc(100%-3rem)] rounded-[24px] object-contain object-center shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
                 />
