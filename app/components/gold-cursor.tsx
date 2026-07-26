@@ -13,7 +13,7 @@ export default function GoldCursor() {
       targetRef.current = { x: e.clientX, y: e.clientY };
     };
 
-    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mousemov", onMove);
 
     const ease = 0.1; // smaller = slower catch-up
 
