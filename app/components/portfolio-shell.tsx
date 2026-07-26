@@ -8,10 +8,11 @@ export function PortfolioShell({
   title,
   eyebrow,
   children,
-  heading
+  heading,
 }: {
   title: string;
   eyebrow?: string;
+  heading?: string;
   children: ReactNode;
 }) {
   return (
