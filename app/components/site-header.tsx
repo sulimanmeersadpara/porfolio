@@ -1,27 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FaBars, FaEnvelope, FaGithub, FaLinkedin, FaTimes } from "react-icons/fa";
+import { FaBars, FaEnvelope, FaTimes } from "react-icons/fa";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/experience", label: "Experience" },
-  { href: "/projects", label: "Projects" },
-  { href: "/skills", label: "Skills" },
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#skills", label: "Skills" },
 ];
 
-function isActive(pathname: string, href: string) {
-  if (href === "/") {
-    return pathname === href;
-  }
-  return pathname.startsWith(href);
-}
-
 export function SiteHeader() {
-  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -49,22 +39,20 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-8 lg:flex">
           {navItems.map((item) => {
-            const active = isActive(pathname, item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative text-sm font-medium transition-colors duration-300 ${active ? "text-[#F2D28A]" : "text-white/80 hover:text-[#F2D28A]"}`}
+                className="relative text-sm font-medium text-white/80 transition-colors duration-300 hover:text-[#F2D28A]"
               >
                 {item.label}
-                {active ? <span className="absolute -bottom-2 left-0 h-0.5 w-full rounded-full bg-[#C9A25A]" /> : null}
               </Link>
             );
           })}
         </div>
 
         <div className="flex items-center gap-3">
-          <Link href="/contact" className="hidden rounded-full border border-[#C9A25A] bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-4 py-2 text-sm font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(201,162,90,0.25)] sm:inline-flex">
+          <Link href="#contact" className="hidden rounded-full border border-[#C9A25A] bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-4 py-2 text-sm font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(201,162,90,0.25)] sm:inline-flex">
             Contact Me
           </Link>
           <button
@@ -94,7 +82,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className={`block rounded-2xl border px-4 py-4 text-lg font-medium ${isActive(pathname, item.href) ? "border-[#C9A25A]/50 bg-[#111111] text-[#F2D28A]" : "border-white/10 bg-white/5 text-white/80"}`}
+                className="block rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-lg font-medium text-white/80"
               >
                 {item.label}
               </Link>
@@ -102,7 +90,7 @@ export function SiteHeader() {
           </div>
           <div className="mt-10 rounded-3xl border border-[#C9A25A]/20 bg-[#111111] p-5 text-white">
             <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Available for new projects</p>
-            <Link href="/contact" onClick={() => setMenuOpen(false)} className="mt-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-4 py-2 font-semibold text-black">
+            <Link href="#contact" onClick={() => setMenuOpen(false)} className="mt-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-4 py-2 font-semibold text-black">
               <FaEnvelope /> Start a conversation
             </Link>
           </div>

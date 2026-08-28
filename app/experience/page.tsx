@@ -1,12 +1,12 @@
 "use client";
 //testing salman meer
 import { motion } from "framer-motion";
-import { FaCode, FaRocket } from "react-icons/fa";
+import { FaRocket } from "react-icons/fa";
 import { PortfolioShell, SectionTitle } from "../components/portfolio-shell";
 
-export default function ExperiencePage() {
+export function ExperienceSection() {
   return (
-    <PortfolioShell title="" eyebrow="Professional growth">
+    <section id="experience" className="scroll-mt-28">
       <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <SectionTitle eyebrow="Experience" title="Building Production-Ready Applications using Python Django, React.js and Next.js" description="My journey has been shaped by hands-on learning, real project work, and steady growth in full stack development." />
 
@@ -31,6 +31,14 @@ export default function ExperiencePage() {
           </div>
         </motion.div>
       </div>
+    </section>
+  );
+}
+
+export default function ExperiencePage() {
+  return (
+    <PortfolioShell title="" eyebrow="Professional growth">
+      <ExperienceSection />
     </PortfolioShell>
   );
 }

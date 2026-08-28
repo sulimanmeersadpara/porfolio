@@ -4,6 +4,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaGithub, FaLinkedin, FaRocket, FaSmileBeam } from "react-icons/fa";
 import { PortfolioShell, GlassCard, PagePill, StatCard } from "./components/portfolio-shell";
+import { AboutSection } from "./about/page";
+import { ExperienceSection } from "./experience/page";
+import { ProjectsSection } from "./projects/page";
+import { SkillsSection } from "./skills/page";
+import { ContactSection } from "./contact/page";
 
 const stats = [
   { value: "Django", label: "Backend Framework" },
@@ -26,10 +31,10 @@ export default function Home() {
 
           <div className="w-full max-w-full overflow-hidden min-w-0 sm:max-w-none">
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap min-w-0">
-              <Link href="/projects" className="inline-flex min-w-0 w-full max-w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-5 py-3 font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(201,162,90,0.25)] sm:w-auto">
+              <Link href="#projects" className="inline-flex min-w-0 w-full max-w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-5 py-3 font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(201,162,90,0.25)] sm:w-auto">
                 Explore projects <FaArrowRight />
               </Link>
-              <Link href="/about" className="inline-flex min-w-0 w-full max-w-full items-center justify-center gap-2 rounded-full border border-[#C9A25A]/30 bg-[#111111] px-5 py-3 font-semibold text-[#F2D28A] transition duration-300 hover:-translate-y-0.5 hover:border-[#F2D28A] sm:w-auto">
+              <Link href="#about" className="inline-flex min-w-0 w-full max-w-full items-center justify-center gap-2 rounded-full border border-[#C9A25A]/30 bg-[#111111] px-5 py-3 font-semibold text-[#F2D28A] transition duration-300 hover:-translate-y-0.5 hover:border-[#F2D28A] sm:w-auto">
                 <FaSmileBeam /> Learn more
               </Link>
             </div>
@@ -47,7 +52,7 @@ export default function Home() {
                 <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#D8B36A]">Core skill set</p>
                 <p className="mt-2 text-sm text-white/70">Modern-friendly technologies and professional strengths</p>
               </div>
-              <Link href="/skills" className="text-sm font-semibold text-[#F2D28A] transition hover:text-white">
+              <Link href="#skills" className="text-sm font-semibold text-[#F2D28A] transition hover:text-white">
                 View full skills
               </Link>
             </div>
@@ -75,16 +80,11 @@ export default function Home() {
                   <FaRocket size={18} />
                 </div>
               </div>
-              <div className="relative h-[420px] overflow-hidden rounded-[30px] border border-[#C9A25A]/20 bg-gradient-to-br from-[#111111] via-[#161616] to-[#6F4E1F] p-6">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(201,162,90,0.2),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(242,210,138,0.16),_transparent_35%)]" />
-                <div className="absolute left-6 top-6 h-24 w-24 rounded-full border border-[#C9A25A]/30" />
-                <div className="absolute bottom-8 right-8 h-36 w-36 rounded-full bg-[#F2D28A]/10 blur-2xl" />
-                <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 to-transparent" />
-                <div className="absolute inset-6 overflow-hidden rounded-[24px] border border-[#C9A25A]/20 bg-black/30" />
-                <img
+              <div className="relative h-[300] overflow-hidden rounded-[30px] border border-[#C9A25A]/20 bg-gradient-to-br from-[#111111] via-[#161616] to-[#6F4E1F] ">
+               <img
                   src="/SM big.png"
                   alt="Suliman Meer"
-                  className="absolute inset-6 h-[calc(100%-3rem)] w-[calc(100%-3rem)] rounded-[24px] object-contain object-center shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+                  className="absolute inset-6 h-full  rounded-[24px] object-contain object-center shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
                 />
               </div>
               <div className="flex items-center gap-3">
@@ -98,6 +98,14 @@ export default function Home() {
             </div>
           </GlassCard>
         </motion.div>
+      </div>
+
+      <div className="mt-24 space-y-24">
+        <AboutSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <ContactSection />
       </div>
     </PortfolioShell>
   );

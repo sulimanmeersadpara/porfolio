@@ -28,9 +28,9 @@ const journey = [
   { title: "Full stack delivery", text: "I build complete web products with clean architecture, scalable logic, and polished user experiences." },
 ];
 
-export default function AboutPage() {
+export function AboutSection() {
   return (
-    <PortfolioShell title="" eyebrow="Full Stack Developer">
+    <section id="about" className="scroll-mt-28">
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-8">
           <SectionTitle eyebrow="About Me" title="Creating Modern Web Applications with Python, Django & Next.js." description="I’m Suliman Meer, a passionate Full Stack Developer from Skardu, now based in Lahore. I completed my BS in Computer Science from the University of Baltistan and have been learning and practicing programming for over 7 years." />
@@ -139,6 +139,14 @@ export default function AboutPage() {
           </div>
         </GlassCard>
       </div>
+    </section>
+  );
+}
+
+export default function AboutPage() {
+  return (
+    <PortfolioShell title="" eyebrow="Full Stack Developer">
+      <AboutSection />
     </PortfolioShell>
   );
 }
