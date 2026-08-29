@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaBars, FaEnvelope, FaTimes } from "react-icons/fa";
-
+import { FaBars, FaDownload, FaEnvelope, FaTimes } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa";
 const navItems = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
@@ -52,9 +52,20 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link href="#contact" className="hidden rounded-full border border-[#C9A25A] bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-4 py-2 text-sm font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(201,162,90,0.25)] sm:inline-flex">
-            Contact Me
-          </Link>
+          <a
+            href="/SulimanMeerCV.pdf"
+            download="SulimanMeerCV.pdf"
+            className="hidden rounded-full border border-[#F2D28A]/40 bg-[#F2D28A]/10 px-4 py-2 text-sm font-semibold text-[#F7E7BF] transition duration-300 hover:-translate-y-0.5 hover:border-[#F2D28A] hover:bg-[#F2D28A]/15 sm:inline-flex"
+          >
+            <span className="inline-flex items-center gap-2"><FaDownload /> Download CV</span>
+          </a>
+        <Link
+  href="#contact"
+  className="hidden rounded-full border border-[#C9A25A] bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-4 py-2 text-sm font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(201,162,90,0.25)] sm:inline-flex flex items-center gap-2"
+>
+  <FaPhone className="scale-x-[-1]" />
+  Contact Me
+</Link>
           <button
             type="button"
             onClick={() => setMenuOpen((prev) => !prev)}
@@ -90,9 +101,19 @@ export function SiteHeader() {
           </div>
           <div className="mt-10 rounded-3xl border border-[#C9A25A]/20 bg-[#111111] p-5 text-white">
             <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Available for new projects</p>
-            <Link href="#contact" onClick={() => setMenuOpen(false)} className="mt-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-4 py-2 font-semibold text-black">
-              <FaEnvelope /> Start a conversation
-            </Link>
+            <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+              <Link href="#contact" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-4 py-2 font-semibold text-black">
+                <FaEnvelope /> Start a conversation
+              </Link>
+              <a
+                href="/SulimanMeerCV.pdf"
+                download="SulimanMeerCV.pdf"
+                onClick={() => setMenuOpen(false)}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#F2D28A]/40 bg-[#F2D28A]/10 px-4 py-2 font-semibold text-[#F7E7BF]"
+              >
+                <FaDownload /> Download CV
+              </a>
+            </div>
           </div>
         </div>
       ) : null}

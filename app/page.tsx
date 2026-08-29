@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaArrowRight, FaGithub, FaLinkedin, FaRocket, FaSmileBeam } from "react-icons/fa";
+import { FaArrowRight, FaDownload, FaGithub, FaLinkedin, FaRocket, FaSmileBeam } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa";
 import { PortfolioShell, GlassCard, PagePill, StatCard } from "./components/portfolio-shell";
 import { AboutSection } from "./about/page";
 import { ExperienceSection } from "./experience/page";
@@ -19,6 +20,8 @@ const stats = [
 const skillsPreview = ["Python", "JavaScript", "React.js", "Next.js", "Django", "DRF", "Tailwind CSS", "SQL", "Git & GitHub"];
 
 export default function Home() {
+  const cvUrl = "/SulimanMeerCV.pdf";
+
   return (
     <PortfolioShell title="" eyebrow="Full Stack Developer">
       <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center w-full">
@@ -37,8 +40,11 @@ export default function Home() {
               <Link href="#about" className="inline-flex min-w-0 w-full max-w-full items-center justify-center gap-2 rounded-full border border-[#C9A25A]/30 bg-[#111111] px-5 py-3 font-semibold text-[#F2D28A] transition duration-300 hover:-translate-y-0.5 hover:border-[#F2D28A] sm:w-auto">
                 <FaSmileBeam /> Learn more
               </Link>
+       
             </div>
           </div>
+
+         
 
           <div className="grid gap-4 sm:grid-cols-3">
             {stats.map((stat) => (
@@ -88,12 +94,27 @@ export default function Home() {
                 />
               </div>
               <div className="flex items-center gap-3">
-                <a href="https://github.com/sulimanmeersadpara" target="_blank" rel="noreferrer" className="rounded-full border border-[#C9A25A]/30 p-3 text-[#D8B36A] transition hover:border-[#F2D28A] hover:text-[#F2D28A]">
-                  <FaGithub />
-                </a>
-                <a href="https://www.linkedin.com/in/salman-meer-07b48b365/" target="_blank" rel="noreferrer" className="rounded-full border border-[#C9A25A]/30 p-3 text-[#D8B36A] transition hover:border-[#F2D28A] hover:text-[#F2D28A]">
-                  <FaLinkedin />
-                </a>
+              
+                 <div className="flex flex-wrap w-full justify-center items-center gap-3 pt-1">
+            <a
+              href="https://github.com/sulimanmeersadpara"
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#C9A25A]/30 bg-[#0D0D0D] text-[#D8B36A] transition duration-300 hover:-translate-y-0.5 hover:border-[#F2D28A] hover:text-[#F2D28A] hover:shadow-[0_12px_30px_rgba(242,210,138,0.18)]"
+              aria-label="GitHub"
+            >
+              <FaGithub size={22} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/salman-meer-07b48b365/"
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#C9A25A]/30 bg-[#0D0D0D] text-[#D8B36A] transition duration-300 hover:-translate-y-0.5 hover:border-[#F2D28A] hover:text-[#F2D28A] hover:shadow-[0_12px_30px_rgba(242,210,138,0.18)]"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin size={22} />
+            </a>
+          </div>
               </div>
             </div>
           </GlassCard>

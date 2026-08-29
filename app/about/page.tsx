@@ -103,40 +103,9 @@ export function AboutSection() {
               </div>
             ))}
           </div>
-          <div className="rounded-2xl border border-[#C9A25A]/20 bg-[#050505] p-4">
-            <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Favorite games</p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {favoriteGames.map((item) => (
-                <span key={item} className="rounded-full border border-[#C9A25A]/20 px-3 py-1 text-sm text-[#F2D28A]">{item}</span>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-2xl border border-[#C9A25A]/20 bg-[#050505] p-4">
-            <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Favorite food</p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {favoriteFoods.map((item) => (
-                <span key={item} className="rounded-full border border-[#C9A25A]/20 px-3 py-1 text-sm text-[#F2D28A]">{item}</span>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-2xl border border-[#C9A25A]/20 bg-[#050505] p-4">
-            <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Favorite places</p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {favoritePlaces.map((item) => (
-                <span key={item} className="rounded-full border border-[#C9A25A]/20 px-3 py-1 text-sm text-[#F2D28A]">{item}</span>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-2xl border border-[#C9A25A]/20 bg-[#050505] p-4">
-            <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Favorite personalities</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {personalities.map((person) => (
-                <span key={person.name} className="rounded-full border border-[#C9A25A]/20 px-3 py-2 text-sm text-white/80">
-                  {person.name} · {person.role}
-                </span>
-              ))}
-            </div>
-          </div>
+       
+         
+       
         </GlassCard>
       </div>
     </section>
