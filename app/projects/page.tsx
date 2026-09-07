@@ -33,6 +33,29 @@ const projects = [
     ],
   },
   {
+    title: "Vogue Mercedes Development Engines",
+    image: "/voguemercedies.png",
+    description: "A Next.js automotive website for Vogue Techniques, featuring Mercedes-focused services, service detail pages, service areas, area detail pages, JSON-driven content, blog API integration, and backend contact form submission.",
+    tech: ["Next.js", "JSON Data", "Backend APIs", "Responsive UI"],
+    demo: "https://voguemercedesdevelopmentengines.vercel.app/",
+    highlights: [
+      "Created dedicated service and service detail experiences for Mercedes engine development.",
+      "Added service areas with individual area detail pages for a UK-based workshop.",
+      "Integrated backend APIs for blogs and contact form submissions.",
+    ],
+  },
+  {
+    title: "Vogue Van Development Engines",
+    image: "/voguevan.png",
+    description: "A Next.js automotive platform for Vogue Techniques with van services, detailed service and area pages, brand and model browsing, engine listings and details, API-powered blogs, and backend contact form submission.",
+    tech: ["Next.js", "JSON Data", "Backend APIs", "Responsive UI"],
+    highlights: [
+      "Built service and area detail journeys for Vogue Techniques van customers.",
+      "Added brand, model, and engine browsing with dedicated engine detail pages.",
+      "Integrated backend APIs for blogs and contact form submissions.",
+    ],
+  },
+  {
     title: "Range Rover Repairs (4xcode)",
     image: "/range.png",
     description: "A refined automotive repair website with responsive components, dynamic content, and smooth product presentation built with modern frontend tooling.",
@@ -63,7 +86,7 @@ export function ProjectsSection() {
     <section id="projects" className="scroll-mt-28">
       <div className="space-y-8">
         <SectionTitle eyebrow="Featured work" title="Selected projects" description="A few of my recent web products and implementations." />
-        <div className="grid gap-6 xl:grid-cols-4 lg:grid-cols-2">
+        <div className="grid gap-6 xl:grid-cols-3 lg:grid-cols-2">
           {projects.map((project, index) => (
             <motion.div key={project.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} whileHover={{ y: -8, scale: 1.01 }} className="group flex h-full flex-col overflow-hidden rounded-[10px] border border-[#00255B]/15 bg-white shadow-[0_20px_90px_rgba(0,37,91,0.12)] backdrop-blur-xl">
               <div className="relative h-56 overflow-hidden bg-[#00255B]">
@@ -79,9 +102,11 @@ export function ProjectsSection() {
                 <div className="mt-5 flex flex-wrap gap-2">{project.tech.map((tech) => <span key={tech} className="rounded-full border border-[#00255B]/15 bg-[#00255B]/5 px-3 py-1 text-sm font-medium text-[#00255B]">{tech}</span>)}</div>
                 <ul className="mt-5 space-y-2 text-sm leading-7 text-[#00255B]/65">{project.highlights.map((item) => <li key={item} className="flex gap-2"><span className="mt-1 text-[#00255B]">•</span>{item}</li>)}</ul>
                 <div className="mt-auto pt-4 pb-2">
-                  <Link href={project.demo} className="inline-flex items-center gap-2 rounded-[8px] bg-[#00255B] px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5">
-                    <FaExternalLinkAlt /> Live Demo
-                  </Link>
+                  {project.demo ? (
+                    <Link href={project.demo} className="inline-flex items-center gap-2 rounded-[8px] bg-[#00255B] px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5">
+                      <FaExternalLinkAlt /> Live Demo
+                    </Link>
+                  ) : null}
                 </div>
               </div>
             </motion.div>
