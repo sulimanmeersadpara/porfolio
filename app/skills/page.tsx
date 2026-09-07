@@ -50,13 +50,13 @@ export function SkillsSection() {
                 transition={{ delay: index * 0.08 }}
               >
                 <GlassCard className="h-full">
-                  <div className="flex items-center gap-3 text-[#D8B36A]">
+                  <div className="flex items-center gap-3 text-[#00255B]">
                     <Icon size={18} />
-                    <h3 className="text-lg font-semibold text-white">{group.title}</h3>
+                    <h3 className="text-lg font-semibold text-[#00255B]">{group.title}</h3>
                   </div>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {group.items.map((item) => (
-                      <span key={item} className="rounded-full border border-[#C9A25A]/20 bg-[#050505] px-3 py-1 text-sm text-[#F2D28A]">
+                      <span key={item} className="rounded-full border border-[#00255B]/15 bg-[#00255B]/5 px-3 py-1 text-sm text-[#00255B]">
                         {item}
                       </span>
                     ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaBars, FaDownload, FaEnvelope, FaTimes } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
@@ -30,10 +31,10 @@ export function SiteHeader() {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-black w-full px-4 py-1 sm:px-6 lg:px-8">
-      <nav className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border border-[#C9A25A]/40 bg-black/80 px-4 py-3 transition-all duration-300 sm:px-6 ${scrolled ? "shadow-[0_20px_70px_rgba(201,162,90,0.18)]" : "shadow-[0_12px_60px_rgba(0,0,0,0.25)]"}`}>
-        <Link href="/" className="flex items-center gap-3 text-sm font-semibold tracking-[0.32em] text-[#F2D28A]">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C9A25A] bg-[#111111] text-base font-semibold text-white">SM</span>
+    <header className="sticky top-0 z-50 w-full bg-white/95 px-4 py-1 sm:px-6 lg:px-8">
+      <nav className={`mx-auto flex max-w-7xl items-center justify-between rounded-[10px] border border-[#00255B]/20 bg-white/95 px-4 py-3 transition-all duration-300 sm:px-6 ${scrolled ? "shadow-[0_20px_70px_rgba(0,37,91,0.16)]" : "shadow-[0_12px_60px_rgba(0,37,91,0.08)]"}`}>
+        <Link href="/" className="flex items-center gap-3 text-sm font-semibold tracking-[0.32em] text-[#00255B]">
+          <Image src="/favicon.png" alt="Suliman Meer logo" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
           <span className="hidden sm:inline">SULIMAN MEER</span>
         </Link>
 
@@ -43,7 +44,7 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative text-sm font-medium text-white/80 transition-colors duration-300 hover:text-[#F2D28A]"
+                className="relative text-sm font-medium text-[#00255B]/80 transition-colors duration-300 hover:text-[#00255B]"
               >
                 {item.label}
               </Link>
@@ -55,13 +56,13 @@ export function SiteHeader() {
           <a
             href="/SulimanMeerCV.pdf"
             download="SulimanMeerCV.pdf"
-            className="hidden rounded-full border border-[#F2D28A]/40 bg-[#F2D28A]/10 px-4 py-2 text-sm font-semibold text-[#F7E7BF] transition duration-300 hover:-translate-y-0.5 hover:border-[#F2D28A] hover:bg-[#F2D28A]/15 sm:inline-flex"
+            className="hidden rounded-[8px] border border-[#00255B]/20 bg-white px-4 py-2 text-sm font-semibold text-[#00255B] transition duration-300 hover:-translate-y-0.5 hover:border-[#00255B] hover:bg-[#00255B]/5 sm:inline-flex"
           >
             <span className="inline-flex items-center gap-2"><FaDownload /> Download CV</span>
           </a>
         <Link
   href="#contact"
-  className="hidden rounded-full border border-[#C9A25A] bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-4 py-2 text-sm font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(201,162,90,0.25)] sm:inline-flex flex items-center gap-2"
+  className="hidden rounded-[8px] border border-[#00255B] bg-[#00255B] px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(0,37,91,0.25)] sm:inline-flex flex items-center gap-2"
 >
   <FaPhone className="scale-x-[-1]" />
   Contact Me
@@ -69,7 +70,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#C9A25A]/40 bg-[#111111] text-[#F2D28A] lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-[8px] border border-[#00255B]/30 bg-white text-[#00255B] lg:hidden"
             aria-label="Toggle navigation"
           >
             {menuOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
@@ -78,12 +79,12 @@ export function SiteHeader() {
       </nav>
 
       {menuOpen ? (
-        <div className="fixed inset-0 z-40 bg-black/90 px-6 py-8 backdrop-blur-xl lg:hidden">
+        <div className="fixed inset-0 z-40 bg-white/95 px-6 py-8 backdrop-blur-xl lg:hidden">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-lg font-semibold tracking-[0.3em] text-[#F2D28A]" onClick={() => setMenuOpen(false)}>
+            <Link href="/" className="text-lg font-semibold tracking-[0.3em] text-[#00255B]" onClick={() => setMenuOpen(false)}>
               SULIMAN MEER
             </Link>
-            <button type="button" onClick={() => setMenuOpen(false)} className="rounded-full border border-[#C9A25A]/40 p-3 text-[#F2D28A]">
+            <button type="button" onClick={() => setMenuOpen(false)} className="rounded-[8px] border border-[#00255B]/30 p-3 text-[#00255B]">
               <FaTimes size={18} />
             </button>
           </div>
@@ -93,23 +94,23 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="block rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-lg font-medium text-white/80"
+                className="block rounded-[8px] border border-[#00255B]/15 bg-white px-4 py-4 text-lg font-medium text-[#00255B]/80"
               >
                 {item.label}
               </Link>
             ))}
           </div>
-          <div className="mt-10 rounded-3xl border border-[#C9A25A]/20 bg-[#111111] p-5 text-white">
-            <p className="text-sm uppercase tracking-[0.28em] text-[#D8B36A]">Available for new projects</p>
+          <div className="mt-10 rounded-[10px] border border-[#00255B]/15 bg-[#00255B] p-5 text-white">
+            <p className="text-sm uppercase tracking-[0.28em] text-white/75">Available for new projects</p>
             <div className="mt-3 flex flex-col gap-3 sm:flex-row">
-              <Link href="#contact" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-4 py-2 font-semibold text-black">
+              <Link href="#contact" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-white px-4 py-2 font-semibold text-[#00255B]">
                 <FaEnvelope /> Start a conversation
               </Link>
               <a
                 href="/SulimanMeerCV.pdf"
                 download="SulimanMeerCV.pdf"
                 onClick={() => setMenuOpen(false)}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#F2D28A]/40 bg-[#F2D28A]/10 px-4 py-2 font-semibold text-[#F7E7BF]"
+                className="inline-flex items-center justify-center gap-2 rounded-[8px] border border-white/40 bg-white/10 px-4 py-2 font-semibold text-white"
               >
                 <FaDownload /> Download CV
               </a>

@@ -65,21 +65,21 @@ export function ProjectsSection() {
         <SectionTitle eyebrow="Featured work" title="Selected projects" description="A few of my recent web products and implementations." />
         <div className="grid gap-6 xl:grid-cols-4 lg:grid-cols-2">
           {projects.map((project, index) => (
-            <motion.div key={project.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} whileHover={{ y: -8, scale: 1.01 }} className="group flex h-full flex-col overflow-hidden rounded-[32px] border border-[#C9A25A]/20 bg-[#111111]/90 shadow-[0_20px_90px_rgba(0,0,0,0.25)] backdrop-blur-xl">
-              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-[#111111] via-[#1d1d1d] to-[#6F4E1F]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(201,162,90,0.2),_transparent_35%)]" />
-                <div className="absolute inset-0 transition duration-500 group-hover:scale-105" style={{ backgroundImage: "linear-gradient(135deg, rgba(242,210,138,0.14), transparent 70%)" }} />
-                <div className="absolute inset-0 m-6 overflow-hidden rounded-[24px] border border-[#C9A25A]/20 bg-black/30 backdrop-blur-sm">
+            <motion.div key={project.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} whileHover={{ y: -8, scale: 1.01 }} className="group flex h-full flex-col overflow-hidden rounded-[10px] border border-[#00255B]/15 bg-white shadow-[0_20px_90px_rgba(0,37,91,0.12)] backdrop-blur-xl">
+              <div className="relative h-56 overflow-hidden bg-[#00255B]">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.2),_transparent_35%)]" />
+                <div className="absolute inset-0 transition duration-500 group-hover:scale-105" style={{ backgroundImage: "linear-gradient(135deg, rgba(255,255,255,0.14), transparent 70%)" }} />
+                <div className="absolute inset-0 m-6 overflow-hidden rounded-[10px] border border-white/30 bg-[#00255B]/30 backdrop-blur-sm">
                   {project.image ? <img src={project.image} alt={project.title} className="h-full w-full object-cover" /> : null}
                 </div>
               </div>
               <div className="relative flex flex-1 flex-col p-6">
-                <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
-                <p className="mt-3 text-base leading-7 text-white/70">{project.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">{project.tech.map((tech) => <span key={tech} className="rounded-full border border-[#C9A25A]/20 bg-[#050505] px-3 py-1 text-sm font-medium text-[#F2D28A]">{tech}</span>)}</div>
-                <ul className="mt-5 space-y-2 text-sm leading-7 text-white/70">{project.highlights.map((item) => <li key={item} className="flex gap-2"><span className="mt-1 text-[#C9A25A]">•</span>{item}</li>)}</ul>
+                <h3 className="text-2xl font-semibold text-[#00255B]">{project.title}</h3>
+                <p className="mt-3 text-base leading-7 text-[#00255B]/65">{project.description}</p>
+                <div className="mt-5 flex flex-wrap gap-2">{project.tech.map((tech) => <span key={tech} className="rounded-full border border-[#00255B]/15 bg-[#00255B]/5 px-3 py-1 text-sm font-medium text-[#00255B]">{tech}</span>)}</div>
+                <ul className="mt-5 space-y-2 text-sm leading-7 text-[#00255B]/65">{project.highlights.map((item) => <li key={item} className="flex gap-2"><span className="mt-1 text-[#00255B]">•</span>{item}</li>)}</ul>
                 <div className="mt-auto pt-4 pb-2">
-                  <Link href={project.demo} className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#C9A25A] to-[#9A7235] px-4 py-2 text-sm font-semibold text-black transition hover:-translate-y-0.5">
+                  <Link href={project.demo} className="inline-flex items-center gap-2 rounded-[8px] bg-[#00255B] px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5">
                     <FaExternalLinkAlt /> Live Demo
                   </Link>
                 </div>
