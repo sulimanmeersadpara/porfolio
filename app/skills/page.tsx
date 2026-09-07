@@ -18,7 +18,7 @@ const skillGroups = [
   {
     title: "Backend",
     icon: FaCode,
-    items: ["Django", "Django REST Framework (DRF)", "RESTful API Development", "Object-Oriented Programming (OOP)"],
+    items: ["Django", "FastAPI", "Django REST Framework (DRF)", "RESTful API Development", "Object-Oriented Programming (OOP)"],
   },
   {
     title: "Database & Tools",
