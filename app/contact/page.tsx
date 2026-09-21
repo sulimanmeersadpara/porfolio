@@ -5,10 +5,10 @@ import { ContactDetails, GlassCard, SectionTitle } from "../components/portfolio
 
 export function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-28 px-4">
+    <section id="contact" className="scroll-mt-28 py-1">
       <div className="mx-auto w-full max-w-4xl">
         <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-6">
-          <SectionTitle eyebrow="Get in touch" title="Let’s connect" description="Open for opportunities and collaborations." />
+          <SectionTitle eyebrow="GET IN TOUCH" title="Let's Connect" description="I am open to new opportunities, interesting projects, and professional collaborations. Feel free to get in touch with me." />
           <GlassCard className="overflow-hidden">
             <ContactDetails />
           </GlassCard>

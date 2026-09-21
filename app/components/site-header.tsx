@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaBars, FaDownload, FaEnvelope, FaTimes } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
+import { scrollToSection } from "./portfolio-shell";
 const navItems = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
@@ -34,8 +35,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full bg-white/95 px-4 py-1 sm:px-6 lg:px-8">
       <nav className={`mx-auto flex max-w-7xl items-center justify-between rounded-[10px] border border-[#00255B]/20 bg-white/95 px-4 py-3 transition-all duration-300 sm:px-6 ${scrolled ? "shadow-[0_20px_70px_rgba(0,37,91,0.16)]" : "shadow-[0_12px_60px_rgba(0,37,91,0.08)]"}`}>
         <Link href="/" className="flex items-center gap-3 text-sm font-semibold tracking-[0.32em] text-[#00255B]">
-          <Image src="/favicon.png" alt="Suliman Meer logo" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
-          <span className="hidden sm:inline">SULIMAN MEER</span>
+          <Image src="/favicon.png" alt="Muhammad Suliman Meer logo" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
+          <span className="hidden sm:inline">MUHAMMAD SULIMAN MEER</span>
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
@@ -44,6 +45,7 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={(event) => scrollToSection(event, item.href.slice(1))}
                 className="relative text-sm font-medium text-[#00255B]/80 transition-colors duration-300 hover:text-[#00255B]"
               >
                 {item.label}
@@ -62,6 +64,7 @@ export function SiteHeader() {
           </a>
         <Link
   href="#contact"
+  onClick={(event) => scrollToSection(event, "contact")}
   className="hidden rounded-[8px] border border-[#00255B] bg-[#00255B] px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_35px_rgba(0,37,91,0.25)] sm:inline-flex flex items-center gap-2"
 >
   <FaPhone className="scale-x-[-1]" />
@@ -81,8 +84,8 @@ export function SiteHeader() {
       {menuOpen ? (
         <div className="fixed inset-0 z-40 bg-white/95 px-6 py-8 backdrop-blur-xl lg:hidden">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-lg font-semibold tracking-[0.3em] text-[#00255B]" onClick={() => setMenuOpen(false)}>
-              SULIMAN MEER
+            <Link href="/" className="text-sm font-semibold tracking-[0.3em] text-[#00255B]" onClick={() => setMenuOpen(false)}>
+              MUHAMMAD SULIMAN MEER
             </Link>
             <button type="button" onClick={() => setMenuOpen(false)} className="rounded-[8px] border border-[#00255B]/30 p-3 text-[#00255B]">
               <FaTimes size={18} />
@@ -93,8 +96,11 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className="block rounded-[8px] border border-[#00255B]/15 bg-white px-4 py-4 text-lg font-medium text-[#00255B]/80"
+                onClick={(event) => {
+                  scrollToSection(event, item.href.slice(1));
+                  setMenuOpen(false);
+                }}
+                className="block rounded-[8px] border border-[#00255B]/15 bg-white px-4 py-4 text-sm font-medium text-[#00255B]/80"
               >
                 {item.label}
               </Link>
@@ -103,7 +109,10 @@ export function SiteHeader() {
           <div className="mt-10 rounded-[10px] border border-[#00255B]/15 bg-[#00255B] p-5 text-white">
             <p className="text-sm uppercase tracking-[0.28em] text-white/75">Available for new projects</p>
             <div className="mt-3 flex flex-col gap-3 sm:flex-row">
-              <Link href="#contact" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-white px-4 py-2 font-semibold text-[#00255B]">
+              <Link href="#contact" onClick={(event) => {
+                scrollToSection(event, "contact");
+                setMenuOpen(false);
+              }} className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-white px-4 py-2 font-semibold text-[#00255B]">
                 <FaEnvelope /> Start a conversation
               </Link>
               <a

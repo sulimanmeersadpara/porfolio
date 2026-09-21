@@ -83,7 +83,7 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="scroll-mt-28">
+    <section id="projects" className="scroll-mt-28 py-1">
       <div className="space-y-8">
         <SectionTitle eyebrow="Featured work" title="Selected projects" description="A few of my recent web products and implementations." />
         <div className="grid gap-6 xl:grid-cols-3 lg:grid-cols-2">
@@ -97,8 +97,8 @@ export function ProjectsSection() {
                 </div>
               </div>
               <div className="relative flex flex-1 flex-col p-6">
-                <h3 className="text-2xl font-semibold text-[#00255B]">{project.title}</h3>
-                <p className="mt-3 text-base leading-7 text-[#00255B]/65">{project.description}</p>
+                <h3 className="text-xl font-semibold text-[#00255B]">{project.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-[#00255B]/65">{project.description}</p>
                 <div className="mt-5 flex flex-wrap gap-2">{project.tech.map((tech) => <span key={tech} className="rounded-full border border-[#00255B]/15 bg-[#00255B]/5 px-3 py-1 text-sm font-medium text-[#00255B]">{tech}</span>)}</div>
                 <ul className="mt-5 space-y-2 text-sm leading-7 text-[#00255B]/65">{project.highlights.map((item) => <li key={item} className="flex gap-2"><span className="mt-1 text-[#00255B]">•</span>{item}</li>)}</ul>
                 <div className="mt-auto pt-4 pb-2">
@@ -119,7 +119,7 @@ export function ProjectsSection() {
 
 export default function ProjectsPage() {
   return (
-    <PortfolioShell title="Projects" heading="Designed, Developed, and Delivered." eyebrow="Selected work">
+    <PortfolioShell title="Projects" heading="Designed, Developed, and Delivered.">
       <ProjectsSection />
     </PortfolioShell>
   );

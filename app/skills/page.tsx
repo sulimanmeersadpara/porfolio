@@ -8,35 +8,40 @@ const skillGroups = [
   {
     title: "Programming Languages",
     icon: FaCode,
-    items: ["Python", "JavaScript", "C++", "SQL"],
+    description: "Python, JavaScript, C++",
+    items: ["Python", "JavaScript", "C++"],
   },
   {
     title: "Frontend",
     icon: FaLayerGroup,
+    description: "React.js, Next.js, Tailwind CSS, MUI, HTML5, CSS3",
     items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "Material UI (MUI)"],
   },
   {
     title: "Backend",
     icon: FaCode,
+    description: "Django, Django REST Framework, FastAPI, SQLAlchemy",
     items: ["Django", "FastAPI", "Django REST Framework (DRF)", "RESTful API Development", "Object-Oriented Programming (OOP)"],
   },
   {
     title: "Database & Tools",
     icon: FaDatabase,
-    items: ["SQL Databases", "Git", "GitHub"],
+    description: "MySQL, PostgreSQL, SQLite, Git, GitHub, Postman",
+    items: ["MySQL", "PostgreSQL", "SQLite", "Git", "GitHub", "Postman"],
   },
   {
     title: "Professional Skills",
     icon: FaTools,
-    items: ["Responsive Web Development", "Full Stack Development", "Problem Solving"],
+    description: "Problem Solving, Team Collaboration, API Integration, Debugging, Clean Code",
+    items: ["Problem Solving", "Team Collaboration", "API Integration", "Debugging", "Clean Code"],
   },
 ];
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="scroll-mt-28">
+    <section id="skills" className="scroll-mt-28 py-1">
       <div className="space-y-8">
-        <SectionTitle eyebrow="Technical overview" title="Core skills and strengths" description="A concise view of my development capabilities." />
+        <SectionTitle eyebrow="Technical overview" title="Core Skills and Strengths" description="My main skills are focused on full-stack web development, with a strong focus on Python backend development and modern JavaScript frontend technologies." />
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {skillGroups.map((group, index) => {
@@ -52,8 +57,9 @@ export function SkillsSection() {
                 <GlassCard className="h-full">
                   <div className="flex items-center gap-3 text-[#00255B]">
                     <Icon size={18} />
-                    <h3 className="text-lg font-semibold text-[#00255B]">{group.title}</h3>
+                    <h3 className="text-xl font-semibold text-[#00255B]">{group.title}</h3>
                   </div>
+                  <p className="mt-3 text-sm leading-6 text-[#00255B]/65">{group.description}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {group.items.map((item) => (
                       <span key={item} className="rounded-full border border-[#00255B]/15 bg-[#00255B]/5 px-3 py-1 text-sm text-[#00255B]">
@@ -73,7 +79,7 @@ export function SkillsSection() {
 
 export default function SkillsPage() {
   return (
-    <PortfolioShell title="Skills"  heading="Core Skills and Technologies"  eyebrow="Technical strengths">
+    <PortfolioShell title="Skills" heading="Core Skills and Technologies">
       <SkillsSection />
     </PortfolioShell>
   );
