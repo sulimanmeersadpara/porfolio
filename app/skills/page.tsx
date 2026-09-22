@@ -39,11 +39,11 @@ const skillGroups = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="scroll-mt-28 py-1">
-      <div className="space-y-8">
+    <section id="skills" className="scroll-mt-28">
+      <div className="space-y-[10px]">
         <SectionTitle eyebrow="Technical overview" title="Core Skills and Strengths" description="My main skills are focused on full-stack web development, with a strong focus on Python backend development and modern JavaScript frontend technologies." />
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-[10px] sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((group, index) => {
             const Icon = group.icon;
             return (
@@ -57,9 +57,9 @@ export function SkillsSection() {
                 <GlassCard className="h-full">
                   <div className="flex items-center gap-3 text-[#00255B]">
                     <Icon size={18} />
-                    <h3 className="text-xl font-semibold text-[#00255B]">{group.title}</h3>
+                    <h3 className="text-2xl font-semibold text-[#00255B] md:text-3xl lg:text-4xl">{group.title}</h3>
                   </div>
-                  <p className="mt-3 text-sm leading-6 text-[#00255B]/65">{group.description}</p>
+                  <p className="mt-[5px] text-sm leading-6 text-[#00255B]/65 sm:text-base lg:text-lg">{group.description}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {group.items.map((item) => (
                       <span key={item} className="rounded-full border border-[#00255B]/15 bg-[#00255B]/5 px-3 py-1 text-sm text-[#00255B]">

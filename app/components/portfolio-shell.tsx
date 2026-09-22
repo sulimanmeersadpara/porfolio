@@ -29,12 +29,12 @@ export function PortfolioShell({
       </div>
 
       <main className="relative min-w-0 px-4 pb-12 pt-6 sm:px-6 lg:px-8 lg:pt-8">
-        <div className="mx-auto flex max-w-7xl min-w-0 flex-col gap-8">
+        <div className="mx-auto flex max-w-7xl min-w-0 flex-col gap-[10px]">
           <div className="rounded-[10px] border border-[#00255B]/15 bg-white/95 p-5 shadow-[0_30px_120px_rgba(0,37,91,0.12)] backdrop-blur-xl sm:p-8 lg:p-10">
             {title ? (
             <div className="mb-6 flex flex-col gap-2 border-b border-[#00255B]/15 pb-6">
               <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#00255B]">{title}</p>
-              <h1 className="max-w-3xl text-xl font-semibold tracking-tight text-[#00255B]">{heading}</h1>
+              <h1 className="max-w-3xl text-2xl font-semibold tracking-tight text-[#00255B] md:text-3xl lg:text-4xl">{heading}</h1>
             </div>
           ) : null}
             {children}
@@ -71,10 +71,10 @@ export function PortfolioShell({
 export function SectionTitle({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return (
     
-    <div className="max-w-2xl">
+    <div className="w-full">
       <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#00255B]">{eyebrow}</p>
-      <h2 className="mt-3 text-xl font-semibold tracking-tight text-[#00255B]">{title}</h2>
-      <p className="mt-4 text-sm leading-6 text-[#00255B]/70">{description}</p>
+      <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[#00255B] md:text-3xl lg:text-4xl">{title}</h2>
+      <p className="mt-[5px] text-sm leading-6 text-[#00255B]/70 sm:text-base lg:text-lg">{description}</p>
   
     </div>
   );

@@ -25,7 +25,7 @@ export default function Home() {
         <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className="min-w-0 space-y-8">
           <div className="space-y-5">
             <PagePill>Full Stack Software Engineer</PagePill>
-            <h2 className="max-w-2xl  font-semibold  text-4xl text-[#00255B]">Muhammad Suliman Meer</h2>
+            <h2 className="max-w-2xl font-semibold text-3xl text-[#00255B] md:text-4xl lg:text-5xl">Muhammad Suliman Meer</h2>
             <p className="max-w-xl text-sm leading-6 text-[#00255B]/70">Full Stack Software Engineer working with Django, FastAPI, Next.js, React.js, and SQL databases to build reliable and user-friendly web applications.</p>
           </div>
 
@@ -103,7 +103,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <div className="mt-10 space-y-12 sm:mt-14 sm:space-y-16">
+      <div className="mt-[10px] space-y-[10px]">
         <AboutSection />
         <ExperienceSection />
         <ProjectsSection />
