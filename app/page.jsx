@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaArrowRight,
   FaBars,
@@ -23,28 +24,53 @@ import {
   FaTimes,
 } from "react-icons/fa";
 
-function SiteHeader() {
+const sectionLinks = [
+  { id: "top", label: "Home", href: "/" },
+  { id: "about", label: "About", href: "/about" },
+  { id: "experience", label: "Experience", href: "/experience" },
+  { id: "projects", label: "Projects", href: "/projects" },
+  { id: "skills", label: "Skills", href: "/skills" },
+  { id: "education", label: "Education", href: "/education" },
+  { id: "contact", label: "Contact", href: "/contact" },
+];
+
+function SectionLink({ section, children, ...props }) {
+  const destination = sectionLinks.find((item) => item.id === section);
+
+  return (
+    <Link href={destination.href} scroll={false} {...props}>
+      {children}
+    </Link>
+  );
+}
+
+function SiteHeader({ activeSection, onNavigate }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="site-header">
       <nav className="nav-shell" aria-label="Main navigation">
-        <a className="brand" href="#top" aria-label="Muhammad Suliman Meer, home">
+        <SectionLink className="brand" section="top" aria-label="Muhammad Suliman Meer, home">
           <Image className="brand-logo" src="/logo.png" alt="" width={40} height={40} priority />
           <span className="brand-copy">
             <strong>Muhammad Suliman Meer</strong>
             <small>Full Stack Developer</small>
           </span>
-        </a>
-        <div className="desktop-nav">
-          <a className="active" href="#top">Home</a>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-        </div>
+        </SectionLink>
+        <nav className="desktop-nav" aria-label="Portfolio sections">
+          {sectionLinks.map(({ id, href, label }) => (
+            <Link
+              key={id}
+              className={activeSection === id ? "active" : undefined}
+              href={href}
+              scroll={false}
+              aria-current={activeSection === id ? "page" : undefined}
+              onClick={() => onNavigate(id)}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
         <a className="header-download" href="/SulimanMeerCV.pdf" download="SulimanMeerCV.pdf">
           <FaDownload /> Download CV
         </a>
@@ -59,18 +85,26 @@ function SiteHeader() {
         </button>
       </nav>
       {menuOpen && (
-        <div className="mobile-nav">
-          <a href="#top" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a>
-          <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
-          <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
-          <a href="#education" onClick={() => setMenuOpen(false)}>Education</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        <nav className="mobile-nav" aria-label="Portfolio sections">
+          {sectionLinks.map(({ id, href, label }) => (
+            <Link
+              key={id}
+              className={activeSection === id ? "active" : undefined}
+              href={href}
+              scroll={false}
+              aria-current={activeSection === id ? "page" : undefined}
+              onClick={() => {
+                onNavigate(id);
+                setMenuOpen(false);
+              }}
+            >
+              {label}
+            </Link>
+          ))}
           <a className="mobile-cv" href="/SulimanMeerCV.pdf" download="SulimanMeerCV.pdf" onClick={() => setMenuOpen(false)}>
             <FaDownload /> Download CV
           </a>
-        </div>
+        </nav>
       )}
     </header>
   );
@@ -89,7 +123,7 @@ function Hero() {
           database logic to creating responsive and user-friendly interfaces.
         </p>
         <div className="hero-actions">
-          <a className="button button-primary" href="#projects">View My Projects <FaArrowRight /></a>
+          <SectionLink className="button button-primary" section="projects">View My Projects <FaArrowRight /></SectionLink>
           <a className="button button-outline" href="/SulimanMeerCV.pdf" download="SulimanMeerCV.pdf"><FaDownload /> Download CV</a>
         </div>
         <div className="tech-strip" aria-label="Technologies">
@@ -125,11 +159,11 @@ function About() {
           development, API integration and improving existing applications.
         </p>
         <div className="value-pills">
-          <span><FaCode /> Clean Code<br />Best Practices</span>
-          <span><FaLaptopCode /> Problem Solver<br />Team Player</span>
-          <span><FaHeart /> Always<br />Learning</span>
+          <span>Clean Code<br />Best Practices</span>
+          <span>Problem Solver<br />Team Player</span>
+          <span>Always<br />Learning</span>
         </div>
-        <a className="button button-outline about-link" href="#experience">Learn More About Me <FaArrowRight /></a>
+        <SectionLink className="button button-outline about-link" section="experience">Learn More About Me <FaArrowRight /></SectionLink>
       </div>
     </section>
   );
@@ -145,7 +179,13 @@ function Experience() {
       <div className="experience-card glass-card">
         <div className="experience-details">
           <div className="company-row">
-            <span className="company-mark">4X</span>
+            <Image
+              className="company-logo"
+              src="/4xcode-logo.webp"
+              alt="4xCode logo"
+              width={40}
+              height={40}
+            />
             <span><strong>4xCode Software House</strong><small>2026 — Present</small></span>
             <span className="experience-date">2026 — Present</span>
           </div>
@@ -181,7 +221,7 @@ function Projects() {
           <h2>Projects built from backend logic<br className="desktop-break" /> to polished interfaces.</h2>
           <p className="section-subtitle">E-commerce, APIs and production websites.</p>
         </div>
-        <a className="button button-outline" href="#projects">View All Projects <FaArrowRight /></a>
+        <SectionLink className="button button-outline" section="projects">View All Projects <FaArrowRight /></SectionLink>
       </div>
       <div className="project-grid">
         <article className="project-card">
@@ -240,10 +280,10 @@ function Projects() {
           </div>
         </article>
         <article className="project-card project-coming">
-          <a className="coming-image" href="#contact" aria-label="Get in touch about upcoming projects">
+          <SectionLink className="coming-image" section="contact" aria-label="Get in touch about upcoming projects">
             <span>More Projects<br />Coming Soon</span>
             <b><FaArrowRight /></b>
-          </a>
+          </SectionLink>
         </article>
       </div>
     </section>
@@ -257,7 +297,7 @@ function Skills() {
         <p className="eyebrow">Technical Skills</p>
         <h2>Tools and technologies I use.</h2>
         <p>A wide range of modern tools and technologies for building scalable, secure and high-performance web applications.</p>
-        <a className="button button-outline" href="#contact">View All Skills <FaArrowRight /></a>
+        <SectionLink className="button button-outline" section="contact">View All Skills <FaArrowRight /></SectionLink>
       </div>
       <div className="skills-board glass-card">
         <div className="skill-group">
@@ -329,17 +369,26 @@ function Contact() {
   );
 }
 
-function SiteFooter() {
+function SiteFooter({ activeSection, onNavigate }) {
   return (
     <footer className="site-footer">
       <div className="footer-main">
-        <a className="brand footer-brand" href="#top">
+        <SectionLink className="brand footer-brand" section="top">
           <Image className="brand-logo" src="/logo.png" alt="" width={40} height={40} />
           <span className="brand-copy"><strong>Muhammad Suliman Meer</strong><small>Full Stack Developer</small></span>
-        </a>
+        </SectionLink>
         <nav aria-label="Footer navigation">
-          <a href="#top">Home</a><a href="#about">About</a><a href="#experience">Experience</a>
-          <a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
+          {sectionLinks.map(({ id, href, label }) => (
+            <Link
+              key={id}
+              href={href}
+              scroll={false}
+              aria-current={activeSection === id ? "page" : undefined}
+              onClick={() => onNavigate(id)}
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
         <div className="footer-socials">
           <a href="https://github.com/sulimanmeersadpara" target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub /></a>
@@ -354,10 +403,71 @@ function SiteFooter() {
   );
 }
 
-export default function Home() {
+export default function Home({ initialSection = "top" }) {
+  const [activeSection, setActiveSection] = useState(initialSection);
+
+  useEffect(() => {
+    const animationFrame = window.requestAnimationFrame(() => {
+      setActiveSection(initialSection);
+      const section = document.getElementById(initialSection);
+
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [initialSection]);
+
+  useEffect(() => {
+    let animationFrame;
+
+    const updateActiveSection = () => {
+      animationFrame = undefined;
+
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+        setActiveSection("contact");
+        return;
+      }
+
+      const activationLine = window.scrollY + Math.max(90, window.innerHeight * 0.3);
+      const visibleSection = [...sectionLinks]
+        .reverse()
+        .find(({ id }) => {
+          const section = document.getElementById(id);
+          return section && section.offsetTop <= activationLine;
+        });
+
+      setActiveSection(visibleSection?.id ?? "top");
+    };
+
+    const handleScroll = () => {
+      if (animationFrame === undefined) {
+        animationFrame = window.requestAnimationFrame(updateActiveSection);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    updateActiveSection();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+
+      if (animationFrame !== undefined) {
+        window.cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, []);
+
+  const handleNavigate = (section) => {
+    setActiveSection(section);
+  };
+
   return (
     <>
-      <SiteHeader />
+      <SiteHeader activeSection={activeSection} onNavigate={handleNavigate} />
       <main>
         <Hero />
         <About />
@@ -367,7 +477,7 @@ export default function Home() {
         <Education />
         <Contact />
       </main>
-      <SiteFooter />
+      <SiteFooter activeSection={activeSection} onNavigate={handleNavigate} />
     </>
   );
 }
